@@ -6,3 +6,5 @@ You won’t have a lot of instruction, you are free to implement it the way that
 
 ## Here the final result:
 
+![image](https://github.com/Moonwalkert3ch/atlas-headphones/assets/132849866/ee3d042c-b4a5-4ff5-a9f7-5983622b2fb6)
+
