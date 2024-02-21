@@ -1,0 +1,114 @@
+:root {
+    --font-size-small: 1.2rem;
+    --font-size-medium: 1.6rem;
+    --font-size-large: 1.8rem;
+    --font-size-x-large: 2.3rem;
+    --font-size-xx-large: 4.8rem;
+
+    --font-weight-regular: 400;
+    --font-weight-bold: 700;
+
+    --line-height-small: 1.2;
+    --line-height-base: 1.5;
+    --line-height-big: 1.8;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    min-width: 480px;
+    max-width: 1000px;
+}
+
+body {
+    margin: auto;
+    font-family: 'source-sans-pro', 'Spin-Cycle-OT';
+    font-size: var(--font-size-medium);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-base);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header {
+    background-image: url(images/headphones_hero_1.jpg);
+    background-size: cover;
+    height: 600px;
+}
+
+.header-logo img {
+    position: relative;
+    width: 165px;
+    height: 30px;
+    float: left;
+    margin-top: 16px;
+    padding-left: 105px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.navbar-menu {
+    overflow: hidden;
+}
+
+.navbar-menu a {
+    float: right;
+    text-align: center;
+    color: white;
+    padding: 0 3px;
+    text-decoration: none;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-right: 65px;
+}
+
+.navbar-menu a:hover {
+    color: #FF6565;
+}
+
+.header-call h1 {
+    text-align: center;
+    padding: 160px;
+    position: fixed;
+    color: white;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    .header-logo img {
+    width: 80%;
+    height: auto;
+    padding-left: 0;
+    }
+
+    .navbar-menu {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar-menu a {
+        display: block;
+        width: 100%; /* Full width for mobile */
+        box-sizing: border-box;
+        padding: 10px;
+        text-align: left;
+        color: white;
+        text-decoration: none;
+        border-bottom: 1px solid #fff; /* Optional: Add a border between items */
+    }
+
+    .navbar-menu a:last-child {
+        border-bottom: none; /* Remove border for the last item */
+    }
+
+    .header-call h1 {
+        padding: 80px;
+    }
+}
