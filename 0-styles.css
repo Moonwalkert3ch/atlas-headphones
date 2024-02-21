@@ -1,16 +1,15 @@
 :root {
-    --font-size-small: 1.2rem;
-    --font-size-medium: 1.6rem;
-    --font-size-large: 1.8rem;
-    --font-size-x-large: 2.3rem;
+    --font-size-small: 12px;
+    --font-size-medium: 16px;
+    --font-size-large: 18px;
+    --font-size-x-large: 32px;
     --font-size-xx-large: 4.8rem;
 
-    --font-weight-regular: 400;
-    --font-weight-bold: 700;
+    --color-red: #FF6565;
+    --color-white: #fff;
 
-    --line-height-small: 1.2;
-    --line-height-base: 1.5;
-    --line-height-big: 1.8;
+    --font: 'Source Sans Pro', 'Lato', sans-serif;
+    --line-height: 1.5;
 }
 
 html {
@@ -21,94 +20,221 @@ html {
 }
 
 body {
-    margin: auto;
-    font-family: 'source-sans-pro', 'Spin-Cycle-OT';
-    font-size: var(--font-size-medium);
-    font-weight: var(--font-weight-regular);
-    line-height: var(--line-height-base);
+    width: 100vw;
+    height: 100vw;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
+header {
+    background-image: url(images/headphones_hero_1.jpg);
+    background-size: cover;
+    width: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    color: var(--color-white);
+}
+
+header .header {
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 2rem;
+    flex-wrap: wrap;
 }
 
 .header {
-    background-image: url(images/headphones_hero_1.jpg);
-    background-size: cover;
-    height: 600px;
-}
-
-.header-logo img {
+    max-width: 1000px;
     position: relative;
-    width: 165px;
-    height: 30px;
-    float: left;
-    margin-top: 16px;
-    padding-left: 105px;
-    flex-shrink: 0;
-    cursor: pointer;
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
-.navbar-menu {
-    overflow: hidden;
-}
-
-.navbar-menu a {
-    float: right;
-    text-align: center;
-    color: white;
-    padding: 0 3px;
-    text-decoration: none;
-    font-size: 15px;
-    margin-top: 15px;
-    margin-right: 65px;
-}
-
-.navbar-menu a:hover {
-    color: #FF6565;
-}
-
-.header-call h1 {
-    text-align: center;
-    padding: 160px;
-    position: fixed;
-    color: white;
-}
-
-@media screen and (max-width: 480px) {
-    .container {
-        padding: 10px;
-    }
-
-    .header-logo img {
-    width: 80%;
+.logo {
+    width: 160px;
     height: auto;
-    padding-left: 0;
+}
+
+.header .navbar-menu {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.header .header-nav {
+    display: inline-flex;
+    margin: auto 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: var(--font);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    text-transform: lowercase;
+}
+
+.header .header-nav li {
+    margin: auto 1.25rem;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: var(--color-white);
+    transition: color 0.1s ease;
+}
+
+.header-nav a:hover, a:active {
+    color: var(--color-red);
+}
+
+#menu-toggle {
+    display: none;
+    position: absolute;
+}
+
+#menu-btn {
+    display: none;
+    position: absolute;
+}
+
+.header-content {
+    width: 75%;
+    margin: 20rem auto 0 auto;
+    font-family: var(--font);
+    text-align: center;
+}
+
+.header-content .hero-title {
+    position: relative;
+    font-size: var(--font-size-x-large);
+    font-weight: 700;
+}
+
+.hero-title::after {
+    content: "Lorem ipsum dolor set amet lorem ipsum";
+    position: relative;
+    display: block;
+    margin: 0.25rem 0;
+    font-size: var(--font-size-medium);
+}
+
+.button {
+    background: var(--color-red);
+    border: none;
+    border-radius: 24px;
+    margin: 1rem auto;
+    padding: 1rem 2rem;
+    box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.5);
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+    font-family: var(--font);
+    font-size: 14px;
+    color: var(--color-white);
+    font-weight: 700;
+}
+
+.button:hover, .button:active {
+    opacity: 0.9;
+}
+
+.header-content p {
+    color: var(--color-white);
+    margin: 2rem 0;
+    line-height: var(--line-height);
+    font-size: var(--font-size-medium);
+}
+
+@media (max-width: 1200px) {
+    header {
+        background-position: 42% 50%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        background-position: 44% 50%;
     }
 
-    .navbar-menu {
+    .logo {
+        width: 50%;
+        height: auto;
+    }
+
+    header .header .navbar-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-nav {
+        margin: 1rem auto;
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        font-size: 14px;
+        font-weight: bold;
         text-align: center;
-        margin-top: 10px;
     }
 
-    .navbar-menu a {
+    .header-nav li {
+        width: 100%;
+        margin: 0.5rem auto;
+    }
+
+    #menu-btn {
+        background: var(--color-white);
+        position: absolute;
         display: block;
-        width: 100%; /* Full width for mobile */
-        box-sizing: border-box;
-        padding: 10px;
-        text-align: left;
-        color: white;
-        text-decoration: none;
-        border-bottom: 1px solid #fff; /* Optional: Add a border between items */
+        height: 2px;
+        width: 13px;
+        left: 1rem;
+        top: 18px;
     }
 
-    .navbar-menu a:last-child {
-        border-bottom: none; /* Remove border for the last item */
+    #menu-btn::before {
+        background: var(--color-white);
+        content: "";
+        position: relative;
+        display: block;
+        top: -0.4rem;
+        height: 2px;
+        width: 20px;
+        transition: all 0.2s ease;
     }
 
-    .header-call h1 {
-        padding: 80px;
+    #menu-btn::after {
+        content: "";
+        background: white;
+        height: 2px;
+        width: 18px;
+        position: relative;
+        top: 0.3rem;
+        display: block;
+        transition: all 0.2s ease;
+    }
+
+    #menu-toggle:checked ~ .header-nav {
+        display: inline-flex;
+    }
+    
+    #menu-toggle:checked ~ #menu-btn {
+        background: transparent;
+    }
+    
+    #menu-toggle:checked ~ #menu-btn::before {
+        transform: rotate(45deg);
+        top: 3px;
+        margin: auto;
+    }
+    
+    #menu-toggle:checked ~ #menu-btn::after {
+        width: 20px;
+        transform: rotate(-45deg);
+        top: 1px;
+        margin: auto;
+    }
+
+    .header-content {
+        margin: 14rem auto 0 auto;
+        width: 100%;
     }
 }
